@@ -14,8 +14,10 @@ const PLACES = [
   ["profile", "#/profile", "user", "Profile"],
   ["crm", "#/crm", "crm", "CRM"],
 ];
-let el, current = "home", open = false;
+let el, current = "home", open = false, bound = false;
 
+// called again on every language switch: rebuild the markup, but wire the
+// listeners only once — a second set made every tap open and close at once
 export function mountIsland() {
   el = document.getElementById("island");
   el.innerHTML = `
@@ -29,6 +31,10 @@ export function mountIsland() {
     <span class="isl-div" aria-hidden="true"></span>
     <button class="isl-bag" type="button" id="isl-bag"></button>
   </div>`;
+  if (open) { el.querySelector("#isl-main").setAttribute("aria-expanded", "true"); }
+  update();
+  if (bound) return;
+  bound = true;
   el.addEventListener("click", (e) => {
     if (e.target.closest("#isl-main")) return toggle();
     if (e.target.closest("#isl-bag")) { toggle(false); return openBag(); }
@@ -47,7 +53,6 @@ export function mountIsland() {
     if (y < 60 || acc < -24) el.classList.remove("folded");
     else if (acc > 36) el.classList.add("folded");
   }, { passive: true });
-  update();
 }
 
 function toggle(v = !open) {
@@ -82,7 +87,7 @@ export function update() {
   main.setAttribute("aria-label", t("{p} — open navigation", { p: t(place[3]) }));
   const bag = el.querySelector("#isl-bag");
   const prev = bag.dataset.n;
-  bag.innerHTML = `${ICON.bag}<b>${digits(n)}</b>`;
+  bag.innerHTML = n ? `${ICON.bag}<b>${digits(n)}</b>` : ICON.bag;
   bag.dataset.n = n; bag.classList.toggle("has", n > 0);
   bag.setAttribute("aria-label", n ? t("Bag, {n} items", { n: digits(n) }) : t("Bag, empty"));
   if (prev != null && +prev < n) { bag.classList.remove("bump"); void bag.offsetWidth; bag.classList.add("bump"); }

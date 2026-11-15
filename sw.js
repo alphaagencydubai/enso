@@ -2,7 +2,7 @@
 // redeploy is seen at once, never half of one); fonts, the lockup, the icons and the
 // photographs are cache-first and precached. The film streams and is left to the
 // browser. build.py writes VERSION and both lists.
-const VERSION = "enso-02399b3986";
+const VERSION = "enso-6997b937b0";
 const SHELL = [
   /* shell:start */
   "./",

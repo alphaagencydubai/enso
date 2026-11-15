@@ -491,7 +491,7 @@ html[dir=rtl] .isl-main { padding: 0 18px 0 14px; }
 .isl-grid { color: #8E8E93; display: grid; overflow: hidden; max-width: 24px; transition: max-width .45s var(--ease), opacity .3s; }
 .isl-grid .ic { width: 18px; height: 18px; }
 .isl-div { width: 1px; height: 26px; background: #3A3A3C; margin: 0 4px; transition: opacity .3s, margin .45s; }
-.isl-bag { display: flex; align-items: center; gap: 7px; height: 48px; padding: 0 16px; border-radius: 99px; background: #2C2C2E; color: #fff; font-weight: 700; font-size: 15px; transition: background .3s, color .3s, transform .3s var(--spring); }
+.isl-bag { display: flex; align-items: center; justify-content: center; gap: 7px; height: 48px; min-width: 48px; padding: 0 14px; border-radius: 99px; background: #2C2C2E; color: #fff; font-weight: 700; font-size: 15px; transition: background .3s, color .3s, transform .3s var(--spring); }
 .isl-bag.has { background: var(--white); color: var(--ink); }
 .isl-bag.bump { animation: bump .5s var(--spring); }
 @keyframes bump { 40% { transform: scale(1.14); } }

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ENSO — Cafe & Bakery, Tabriz</title>
+<meta name="description" content="ENSO Cafe & Bakery, Tabriz — the bake, the card, gatherings for 12 to 500, and your circle card.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="ENSO">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ENSO — Cafe & Bakery">
+<meta property="og:description" content="Circle of togetherness. Tabriz.">
+<meta property="og:url" content="https://alphaagencydubai.github.io/enso/">
+<meta property="og:image" content="https://alphaagencydubai.github.io/enso/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icons/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/app.css?v=02399b3986">
+<script>
+  (function () {
+    var d = document.documentElement, lang = "en", warm = false;
+    try { lang = localStorage.getItem("enso.v1.lang") === "fa" ? "fa" : "en"; } catch (e) {}
+    try { warm = sessionStorage.getItem("enso.v1.booted") === "1"; } catch (e) {}
+    d.setAttribute("lang", lang); d.setAttribute("dir", lang === "fa" ? "rtl" : "ltr");
+    d.className += " booting" + (warm ? " boot-warm" : "");
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    setTimeout(function () { var b = document.getElementById("boot"); if (b) { b.parentNode.removeChild(b); d.classList.remove("booting"); } }, 8000);
+  })();
+</script>
+<!-- preload:start -->
+<link rel="modulepreload" href="js/crmdata.js">
+<link rel="modulepreload" href="js/data.js">
+<link rel="modulepreload" href="js/fa.js">
+<link rel="modulepreload" href="js/i18n.js">
+<link rel="modulepreload" href="js/install.js">
+<link rel="modulepreload" href="js/island.js">
+<link rel="modulepreload" href="js/store.js">
+<link rel="modulepreload" href="js/ui.js">
+<link rel="modulepreload" href="js/views/bag.js">
+<link rel="modulepreload" href="js/views/crm.js">
+<link rel="modulepreload" href="js/views/gather.js">
+<link rel="modulepreload" href="js/views/home.js">
+<link rel="modulepreload" href="js/views/menu.js">
+<link rel="modulepreload" href="js/views/profile.js">
+<!-- preload:end -->
+<script type="module" src="js/app.js?v=02399b3986"></script>
+</head>
+<body>
+
+<div id="boot" aria-hidden="true">
+  <span class="rings" aria-hidden="true"></span>
+  <svg class="boot-ring" viewBox="0 0 100 100" fill="none" stroke="#0A0A0A" stroke-width="11"><path class="a" d="M45.45 93.26A43.5 43.5 0 0 1 10.26 32.31" pathLength="1"/><path class="a" d="M14.81 24.43A43.5 43.5 0 0 1 85.19 24.43" pathLength="1"/><path class="a" d="M89.74 32.31A43.5 43.5 0 0 1 54.55 93.26" pathLength="1"/></svg>
+  <img class="boot-word" src="assets/brand/enso-word.svg" alt="" width="120" height="32">
+  <p class="boot-line">Circle of togetherness</p>
+  <div class="boot-sign" dir="ltr"><img src="assets/brand/alpha-black.png" alt="" width="30" height="23"><span><small>Powered by</small><b>Alpha Agency</b></span></div>
+</div>
+
+<header id="bar" class="bar"></header>
+<main id="view" class="view"></main>
+<nav id="island" class="island" aria-label="Primary"></nav>
+<div id="sheet-root"></div>
+<div id="toast-root" aria-live="polite" aria-atomic="true"></div>
+<noscript><p style="padding:24px;font:15px/1.5 system-ui">ENSO needs JavaScript to run.</p></noscript>
+</body>
+</html>
